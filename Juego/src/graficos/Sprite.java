@@ -10,6 +10,7 @@ public final class Sprite {
 	private final HojaSprites hoja;
 
 	// Colección de sprites
+	public static Sprite asfalto = new Sprite(32, 0, 0, HojaSprites.desierto);
 
 	// Fin de la colección
 
