@@ -9,6 +9,10 @@ public final class Sprite {
 	public int[] pixeles;
 	private final HojaSprites hoja;
 
+	// Colección de sprites
+
+	// Fin de la colección
+
 	public Sprite(final int lado, final int columna, final int fila,
 			final HojaSprites hoja) {
 		this.lado = lado;
