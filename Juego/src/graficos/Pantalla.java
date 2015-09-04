@@ -29,7 +29,7 @@ public final class Pantalla {
 	public void mostrar(final int compensacionX, final int compensacionY) {
 		for (int y = 0; y < alto; y++) {
 			int posicionY = y + compensacionY;
-			if (posicionY < 0 || posicionY >= alto) {
+			if (posicionY < 0 || posicionY >= alto) { // Control except
 				continue;
 			}
 

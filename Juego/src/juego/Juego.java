@@ -4,6 +4,7 @@ import graficos.Pantalla;
 
 import java.awt.BorderLayout;
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
@@ -129,6 +130,8 @@ public class Juego extends Canvas implements Runnable {
 		Graphics g = estrategia.getDrawGraphics();
 
 		g.drawImage(imagen, 0, 0, getWidth(), getHeight(), null);
+		g.setColor(Color.white);
+		g.fillOval(ANCHO / 2, ALTO / 2, 32, 32);
 		g.dispose(); // Elimina memoria que g ocupaba
 
 		estrategia.show();
