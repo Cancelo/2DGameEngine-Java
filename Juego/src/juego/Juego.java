@@ -10,6 +10,7 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 import control.Teclado;
@@ -40,6 +41,8 @@ public class Juego extends Canvas implements Runnable {
 			BufferedImage.TYPE_INT_RGB);
 	private static int[] pixeles = ((DataBufferInt) imagen.getRaster()
 			.getDataBuffer()).getData();
+	private static final ImageIcon icono = new ImageIcon(
+			Juego.class.getResource("/icono/icon.png"));
 
 	private Juego() {
 		setPreferredSize(new Dimension(ANCHO, ALTO));
@@ -52,6 +55,7 @@ public class Juego extends Canvas implements Runnable {
 		ventana = new JFrame(NOMBRE);
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ventana.setResizable(false);
+		ventana.setIconImage(icono.getImage());
 		ventana.setLayout(new BorderLayout()); // -------
 		ventana.add(this, BorderLayout.CENTER);
 		ventana.pack();
