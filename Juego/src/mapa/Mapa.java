@@ -3,10 +3,10 @@ package mapa;
 import graficos.Pantalla;
 
 public abstract class Mapa {
-	private int ancho;
-	private int alto;
+	protected int ancho;
+	protected int alto;
 
-	private int[] cuadros; // Tiles
+	protected int[] cuadros; // Tiles
 
 	public Mapa(int ancho, int alto) { // Constructor - Mapa aleatorio
 		this.ancho = ancho;
@@ -20,7 +20,7 @@ public abstract class Mapa {
 		cargarMapa(ruta);
 	}
 
-	private void generarMapa() {
+	protected void generarMapa() {
 	}
 
 	private void cargarMapa(String ruta) {
