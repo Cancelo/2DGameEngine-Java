@@ -29,6 +29,10 @@ public abstract class Mapa {
 	public void actualizar() {
 	}
 
-	public void mostrar(int compensacionX, int compensacioY, Pantalla pantalla) {
+	public void mostrar(int compensacionX, int compensacionY, Pantalla pantalla) {
+		int o = compensacionX >> 5; // Bit Shifting = /32
+		int e = (compensacionX + pantalla.obtenAncho()) >> 5;
+		int n = compensacionY >> 5;
+		int s = (compensacionY + pantalla.obtenAlto() >> 5);
 	}
 }
