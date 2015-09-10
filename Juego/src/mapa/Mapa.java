@@ -30,23 +30,37 @@ public abstract class Mapa {
 	public void actualizar() {
 	}
 
+	// "Traduce" de tamaño Tile(Cuadro) a tamaño pixel
 	public void mostrar(final int compensacionX, final int compensacionY,
 			final Pantalla pantalla) {
+
+		pantalla.estableceDiferencia(compensacionX, compensacionY);
+
 		int o = compensacionX >> 5; // Bit Shifting = /32
-		int e = (compensacionX + pantalla.obtenAncho()) >> 5;
+		int e = (compensacionX + pantalla.obtenAncho() + Cuadro.LADO) >> 5;
 		int n = compensacionY >> 5;
-		int s = (compensacionY + pantalla.obtenAlto() >> 5);
+		int s = (compensacionY + pantalla.obtenAlto() + Cuadro.LADO) >> 5;
+
+		for (int y = n; y < s; y++) {
+			for (int x = 0; x < e; x++) {
+				obtenCuadro(x, y).mostrar(x, y, pantalla);
+			}
+		}
 	}
 
 	public Cuadro obtenCuadro(final int x, final int y) {
+		if (x < 0 || y < 0 || x >= ancho || y >= alto) {
+			return Cuadro.VACIO;
+		}
 		switch (cuadros[x + y * ancho]) {
 		case 0:
 			return Cuadro.ASFALTO;
-		case 1:
-		case 2:
+			// case 1:
+			// case 2:
+			// case 3:
 
 		default:
-			return null;
+			return Cuadro.VACIO;
 		}
 	}
 }

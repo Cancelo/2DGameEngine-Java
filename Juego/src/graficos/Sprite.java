@@ -10,7 +10,7 @@ public final class Sprite {
 	private HojaSprites hoja;
 
 	// Colección de sprites
-	public static final Sprite VACIO = new Sprite(32, 0x0f0f0f);
+	public static final Sprite VACIO = new Sprite(32, 0);
 	public static final Sprite ASFALTO = new Sprite(32, 0, 0,
 			HojaSprites.desierto);
 
