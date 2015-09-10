@@ -27,7 +27,10 @@ public class Juego extends Canvas implements Runnable {
 
 	private static volatile boolean enFuncionamiento = false;
 
-	private static final String NOMBRE = "Juego";
+	private static final String NOMBRE = "Rising Sun";
+
+	private static String CONTADOR_APS = "";
+	private static String CONTADOR_FPS = "";
 
 	private static int aps = 0;
 	private static int fps = 0;
@@ -65,6 +68,7 @@ public class Juego extends Canvas implements Runnable {
 		ventana.setIconImage(icono.getImage());
 		ventana.setLayout(new BorderLayout()); // -------
 		ventana.add(this, BorderLayout.CENTER);
+		ventana.setUndecorated(true);
 		ventana.pack();
 		ventana.setLocationRelativeTo(null);
 		ventana.setVisible(true);
@@ -113,6 +117,10 @@ public class Juego extends Canvas implements Runnable {
 			x++;
 		}
 
+		if (teclado.salir) {
+			System.exit(0);
+		}
+
 		aps++;
 	}
 
@@ -138,6 +146,8 @@ public class Juego extends Canvas implements Runnable {
 		g.drawImage(imagen, 0, 0, getWidth(), getHeight(), null);
 		g.setColor(Color.white);
 		g.fillOval(ANCHO / 2, ALTO / 2, 32, 32);
+		g.drawString(CONTADOR_APS, 10, 20);
+		g.drawString(CONTADOR_FPS, 10, 35);
 		g.dispose(); // Elimina memoria que g ocupaba
 
 		estrategia.show();
@@ -174,8 +184,10 @@ public class Juego extends Canvas implements Runnable {
 			mostrar();
 
 			if (System.nanoTime() - referenciaContador > NS_POR_SEGUNDO) {
-				ventana.setTitle(NOMBRE + " || APS: " + aps + " || FPS: " + fps);
-				aps = 0;
+				CONTADOR_APS = "APS: " + aps;
+				CONTADOR_FPS = "FPS: " + fps;
+
+				aps = 0; // Reinicia contadores para que no sumen
 				fps = 0;
 				referenciaContador = System.nanoTime();
 			}

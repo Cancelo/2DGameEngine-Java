@@ -13,11 +13,14 @@ public final class Teclado implements KeyListener {
 	public boolean izquierda;
 	public boolean derecha;
 
-	public void actualizar() {
+	public boolean salir;
+
+	public void actualizar() { // Detecta si se han pulsado las teclas
 		arriba = teclas[KeyEvent.VK_W];
 		abajo = teclas[KeyEvent.VK_S];
 		izquierda = teclas[KeyEvent.VK_A];
 		derecha = teclas[KeyEvent.VK_D];
+		salir = teclas[KeyEvent.VK_ESCAPE];
 	}
 
 	public void keyPressed(KeyEvent e) {
