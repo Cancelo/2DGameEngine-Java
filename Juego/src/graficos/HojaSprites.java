@@ -11,8 +11,8 @@ public class HojaSprites {
 	public final int[] pixeles;
 
 	// Colección de hojas de sprites
-	public static HojaSprites desierto = new HojaSprites(
-			"/texturas/desierto.png", 320, 320);
+	public static HojaSprites bosque = new HojaSprites("/texturas/bosque.png",
+			320, 320);
 
 	// Fin de la colección
 

@@ -12,7 +12,7 @@ public final class Sprite {
 	// Colección de sprites
 	public static final Sprite VACIO = new Sprite(32, 0);
 	public static final Sprite ASFALTO = new Sprite(32, 0, 0,
-			HojaSprites.desierto);
+			HojaSprites.bosque);
 
 	// Fin de la colección
 
