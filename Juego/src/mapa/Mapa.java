@@ -8,6 +8,7 @@ public abstract class Mapa {
 	protected int alto;
 
 	protected int[] cuadros; // Tiles
+	protected Cuadro[] cuadrosCatalogo;
 
 	public Mapa(int ancho, int alto) { // Constructor - Mapa aleatorio
 		this.ancho = ancho;
@@ -24,7 +25,7 @@ public abstract class Mapa {
 	protected void generarMapa() {
 	}
 
-	private void cargarMapa(String ruta) {
+	protected void cargarMapa(String ruta) {
 	}
 
 	public void actualizar() {
