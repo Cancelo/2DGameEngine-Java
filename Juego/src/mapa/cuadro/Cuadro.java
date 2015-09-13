@@ -26,8 +26,8 @@ public class Cuadro {
 	public static final Cuadro CUEVA_SUPERIOR = new Cuadro(
 			Sprite.CUEVA_SUPERIOR);
 	public static final Cuadro CUEVA = new Cuadro(Sprite.CUEVA);
-	public static final Cuadro HIEBA_TIERRA_CUEVA = new Cuadro(
-			Sprite.HIEBA_TIERRA_CUEVA);
+	public static final Cuadro HIERBA_TIERRA_ESQUINA = new Cuadro(
+			Sprite.HIERBA_TIERRA_ESQUINA);
 	public static final Cuadro CUEVA_LATERAL_MEDIO = new Cuadro(
 			Sprite.CUEVA_LATERAL_MEDIO);
 	public static final Cuadro CUEVA_LATERAL_BASE = new Cuadro(

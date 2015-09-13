@@ -20,6 +20,7 @@ public abstract class Mapa {
 
 	public Mapa(String ruta) { // Constructor - Mapa desde ruta
 		cargarMapa(ruta);
+		generarMapa();
 	}
 
 	protected void generarMapa() {
@@ -44,7 +45,12 @@ public abstract class Mapa {
 
 		for (int y = n; y < s; y++) {
 			for (int x = 0; x < e; x++) {
-				obtenCuadro(x, y).mostrar(x, y, pantalla);
+				// obtenCuadro(x, y).mostrar(x, y, pantalla); // Aleatorio
+				if (x < 0 || y < 0 || x >= ancho || y >= alto) { // Cargado
+					Cuadro.VACIO.mostrar(x, y, pantalla);
+				} else {
+					cuadrosCatalogo[x + y * ancho].mostrar(x, y, pantalla);
+				}
 			}
 		}
 	}

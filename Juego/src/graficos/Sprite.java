@@ -28,7 +28,7 @@ public final class Sprite {
 	public static final Sprite CUEVA_SUPERIOR = new Sprite(32, 8, 0,
 			HojaSprites.bosque);
 	public static final Sprite CUEVA = new Sprite(32, 9, 0, HojaSprites.bosque);
-	public static final Sprite HIEBA_TIERRA_CUEVA = new Sprite(32, 0, 1,
+	public static final Sprite HIERBA_TIERRA_ESQUINA = new Sprite(32, 0, 1,
 			HojaSprites.bosque);
 	public static final Sprite CUEVA_LATERAL_MEDIO = new Sprite(32, 7, 1,
 			HojaSprites.bosque);
